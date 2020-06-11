@@ -358,8 +358,8 @@
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\mcu\apollo3\hal</state>
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\mcu\apollo3\regs</state>
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\utils</state>
+                    <state>$PROJ_DIR$\..\..\board\apollo3</state>
                     <state>$PROJ_DIR$\..\..\freertos\inc</state>
-                    <state>$PROJ_DIR$\..\..\mcu\IAR\ARM_CM4F</state>
                     <state>$PROJ_DIR$\..\..\src</state>
                 </option>
                 <option>
@@ -638,8 +638,8 @@
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\mcu\apollo3\hal</state>
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\mcu\apollo3\regs</state>
                     <state>$PROJ_DIR$\..\..\board\apollo3\vendor_sdk\utils</state>
+                    <state>$PROJ_DIR$\..\..\board\apollo3</state>
                     <state>$PROJ_DIR$\..\..\freertos\inc</state>
-                    <state>$PROJ_DIR$\..\..\mcu\IAR\ARM_CM4F</state>
                     <state>$PROJ_DIR$\..\..\src</state>
                 </option>
                 <option>
@@ -1113,10 +1113,10 @@
     <group>
         <name>mcu</name>
         <file>
-            <name>$PROJ_DIR$\..\..\mcu\IAR\ARM_CM4F\port.c</name>
+            <name>$PROJ_DIR$\..\..\board\apollo3\port.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\mcu\IAR\ARM_CM4F\portasm.s</name>
+            <name>$PROJ_DIR$\..\..\board\apollo3\portasm.s</name>
         </file>
     </group>
     <file>

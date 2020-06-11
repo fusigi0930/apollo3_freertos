@@ -97,6 +97,8 @@ extern "C"
 /* Interrupt nesting behaviour configuration. */
 #define configKERNEL_INTERRUPT_PRIORITY         (0x7 << 5)
 #define configMAX_SYSCALL_INTERRUPT_PRIORITY    (0x4 << 5)
+#define NVIC_configKERNEL_INTERRUPT_PRIORITY        (0x7)
+#define NVIC_configMAX_SYSCALL_INTERRUPT_PRIORITY   (0x4)
 
 /* Define to trap errors during development. */
 #define configASSERT(x)     if (( x ) == 0) while(1);
@@ -122,9 +124,9 @@ extern "C"
 #define INCLUDE_xEventGroupSetBitFromISR        1
 #define INCLUDE_xTimerPendFunctionCall          0
 
-#define vPortSVCHandler                         am_svcall_isr
-#define xPortPendSVHandler                      am_pendsv_isr
-#define xPortSysTickHandler                     am_systick_isr
+#define vPortSVCHandler                         SVC_Handler
+#define xPortPendSVHandler                      PendSV_Handler
+#define xPortSysTickHandler                     SysTick_Handler
 
 #define configOVERRIDE_DEFAULT_TICK_CONFIGURATION 1 // Enable non-SysTick based Tick
 #define configUSE_TICKLESS_IDLE                   2 // Ambiq specific implementation for Tickless
@@ -147,8 +149,11 @@ extern void am_freertos_wakeup(uint32_t);
 
 #ifdef AM_FREERTOS_USE_STIMER_FOR_TICK
 #define configSTIMER_CLOCK_HZ                     32768
+#define configSTIMER_CLOCK                        AM_HAL_STIMER_XTAL_32KHZ
 #else // Use CTimer
+#define configCTIMER_NUM                          3
 #define configCTIMER_CLOCK_HZ                     32768
+#define configCTIMER_CLOCK                        AM_HAL_CTIMER_XT_32_768KHZ
 #endif
 
 #ifdef __cplusplus

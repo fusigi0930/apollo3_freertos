@@ -130,6 +130,7 @@ static void systickUpdate(void)
     m_tickLast = tickNow;
 }
 
+#if 0
 void am_stimer_cmpr0_isr(void)
 {
     //To implement the CWM_OS_GetTimeNs(), this function needs to be triggered every second
@@ -138,6 +139,7 @@ void am_stimer_cmpr0_isr(void)
     am_hal_stimer_int_clear(AM_HAL_STIMER_INT_COMPAREA);
     am_hal_stimer_compare_delta_set(0, CLOCK_FREQ);//1 second timer
 }
+#endif
 
 #ifdef REBURN_PROCESS
 static uint32_t mINFO0[] = {
