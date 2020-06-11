@@ -59,7 +59,9 @@ void am_freertos_wakeup(uint32_t idleTime)
 }
 
 void task_alloc_stack(void *pvParameters) {
-    while(1) {}
+    while(1) {
+        vTaskDelay(100);
+    }
 }
 
 void task_log1(void *pvParameters) {
